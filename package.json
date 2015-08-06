@@ -1,0 +1,23 @@
+{
+  "name": "Salome-Marek-wedding",
+  "version": "0.0.1",
+  "devDependencies": {
+    "gulp": "~3.9.0",
+    "gulp-rename": "latest",
+    "critical": "latest",
+    "gulp-minify-css": "latest",
+    "gulp-less": "latest",
+    "gulp-uncss": "latest",
+    "gulp-concat": "latest",
+    "gulp-uglify": "latest",
+    "gulp-autoprefixer": "latest",
+    "gulp-imagemin": "latest",
+    "gulp-sync": "latest",
+    "main-bower-files": "~2.9.0",
+    "gulp-concat-css": "~2.2.0",
+    "gulp-csslint": "~0.1.5",
+    "gulp-jshint": "~1.11.2",
+    "jshint-stylish": "~2.0.1",
+    "merge-stream": "~0.1.8"
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "name": "Salome-Marek-wedding",
+  "version": "0.0.1",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.4",
+    "scrollmagic": "~2.0.5",
+    "fontawesome": "~4.4.0",
+    "knacss": "~4.3.2",
+    "konami-code": "latest"
+  },
+  "overrides": {
+    "fontawesome": {
+      "main": 
+         [
+           "css/font-awesome.min.css",
+           "fonts/*"
+         ]
+    },
+    "konami-code": {
+      "main": "src/jquery.konami.js"
+    }
+  }
+}

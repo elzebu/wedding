@@ -1,0 +1,3 @@
+#exclude bower and npm package
+_inc/*
+node_modules/*
