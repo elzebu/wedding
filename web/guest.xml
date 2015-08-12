@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<guests>
+    <guest code="PP34">
+        <name>Pauline et Pascal Ruiz</name>
+        <mail>machin@truc.fr</mail>
+        <confirm>0</confirm>
+        <invited>7</invited>
+        <presence/>
+        <nbAdult>2</nbAdult>
+        <nbChildren>0</nbChildren>
+        <note></note>
+        <dateConf/>
+    </guest>
+    <guest code="FLO07">
+        <name>Aurélie et Florian Chanut</name>
+        <mail>machin@truc.fr</mail>
+        <confirm>0</confirm>
+        <invited>1</invited>
+        <presence/>
+        <nbAdult>2</nbAdult>
+        <nbChildren>0</nbChildren>
+        <note></note>
+        <dateConf/>
+    </guest>
+</guests>

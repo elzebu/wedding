@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+    <question id="1">
+        <level>1</level>
+        <label>Où Salomé et Marek se sont-ils connus ?</label>
+        <answers>
+	        <answer isTrue="1">à Lacanau</answer>
+	        <answer isTrue="0">à Strasbourg</answer>
+	        <answer isTrue="0">à Biarritz</answer>
+    	</answers>
+        <explain>C'est au stage UCPA de Lacanau que nous nous sommes connus !</explain>
+    </question>
+    <question id="2">
+        <level>1</level>
+        <label>Quelle est la spécialité de la ville natale de Marek ?</label>
+        <answers>
+	        <answer isTrue="0">la tome</answer>
+	        <answer isTrue="1">la clairette</answer>
+	        <answer isTrue="0">le baeckeoffe</answer>
+        </answers>
+        <explain>Préparez-vous à en boire au mariage, car il s'agit de la clairette !</explain>
+    </question>
+    <question id="3">
+        <level>1</level>
+        <label>Quel est le métier de Salomé ?</label>
+        <answers>
+	        <answer isTrue="0">excuseur de chantier</answer>
+	        <answer isTrue="0">Tribologue</answer>
+	        <answer isTrue="1">Projeteuse en synthèse</answer>
+	    </answers>
+        <explain>La bonne réponse est bien projeteuse en synthèse dans un cabinet d'ingénerie</explain>
+    </question>
+    <question id="4">
+        <level>1</level>
+        <label>Quel est le métier de Marek ?</label>
+        <answers>
+	        <answer isTrue="0">Doublure de Franky Vincent</answer>
+	        <answer isTrue="0">Champion de Air Guitar</answer>
+	        <answer isTrue="1">Chef de projet</answer>
+	    </answers>
+        <explain>Chef de projet, mais avouez que les deux autres donnaient plus envie !</explain>
+    </question>
+    <question id="5">
+        <level>1</level>
+        <label>Quel est le prénom de la soeur de Marek ?</label>
+        <answers>
+	        <answer isTrue="0">Kitkat</answer>
+	        <answer isTrue="0">smarty</answer>
+	        <answer isTrue="1">Milka</answer>
+	    </answers>
+        <explain>C'est Milka :)</explain>
+    </question>
+    <question id="6">
+        <level>1</level>
+        <label>Quel nom Marek avait imaginé pour son petit garçon ?</label>
+        <answers>
+	        <answer isTrue="0">Vincent-Franky</answer>
+	        <answer isTrue="0">Petit Bébé</answer>
+	        <answer isTrue="1">Johnny-Elvis Jr</answer>
+	    </answers>
+        <explain>Non mais franchement, Johnny-Elvis Jr, ça avait de la gueule !</explain>
+    </question>
+    <question id="7">
+        <level>1</level>
+        <label>Quel pays n'a t-on pas encore visité ensemble ?</label>
+        <answers>
+	        <answer isTrue="0">Croatie</answer>
+	        <answer isTrue="1">Espagne</answer>
+	        <answer isTrue="0">Italie</answer>
+	    </answers>
+        <explain>Nous ne sommes toujours pas aller en Espagne, pourtant c'est pas si loin !</explain>
+    </question>
+    <question id="8">
+        <level>1</level>
+        <label>Quel danse essayons nous d'apprendre ?</label>
+        <answers>
+	        <answer isTrue="0">Batchata</answer>
+	        <answer isTrue="1">Salsa</answer>
+	        <answer isTrue="0">Rock n' roll</answer>
+	    </answers>
+        <explain>Nous suivons des cours de Salsa, nous esperons pouvoir vous faire une démonstration le jour J !</explain>
+    </question>
+    <question id="9">
+        <level>1</level>
+        <label>Quel est le nom de notre chat ?</label>
+        <answers>
+	        <answer isTrue="1">Illy</answer>
+	        <answer isTrue="1">Ikky</answer>
+	        <answer isTrue="0">Ioda</answer>
+	    </answers>
+        <explain>Notre petit monstre s'appelle Illy !</explain>
+    </question>
+</quiz>

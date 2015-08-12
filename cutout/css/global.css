@@ -1,0 +1,261 @@
+body {
+    font-family: 'Indie Flower';
+    background: #CCC;
+}
+
+h1, h2, h3, h4, h5 {
+    font-family: 'Lobster';
+}
+
+h1 {
+    margin-bottom: 20px;   
+}
+
+h2 {
+    margin-bottom: 15px;   
+    
+}
+
+.relative,
+.animated {
+    position: relative;
+}
+
+.link-next {
+    position: absolute;
+}
+
+.key-number {
+  color: #332234;
+  font-weight: bold;
+}
+
+.scene-wrapper {
+    position: relative;
+    overflow: hidden;
+}
+
+.header {
+    overflow: hidden;
+}
+
+#header-scene-1 ul {
+    text-align: left;
+    margin-left: 30%;
+}
+
+#header-scene-1 .deco .tie {
+    width: 40%;
+    margin: auto;
+}
+
+#header-scene-1 h1 {
+    margin-bottom: 40px;
+}
+
+#header-scene-1 .perso {
+    width: 33%;
+    margin: auto;
+}
+#header-scene-2 .result > div {
+    vertical-align: middle;
+}
+
+#header-scene-2 .countdown {
+    width: 100%;
+    text-align: center;
+}
+
+#header-scene-2 .countdown > div {
+    border: 1px solid #000;
+    border-radius: 10px;
+    margin: 10px;
+    min-width: 60px;
+}
+
+#header-scene-2 .countdown .title {
+    border-bottom: 1px solid #000;
+    display: block;
+    padding: 5px;
+}
+
+#header-scene-2 .countdown .result {
+    display: block;
+    padding: 5px;
+}
+
+#header-scene-2 .content-left ul {
+    margin-left: 50%;   
+}
+
+#header-scene-2 .content-right ul {
+    margin-right: 50%;   
+}
+
+.form input {
+    padding: 5px;
+    border: 1px solid #999;
+}
+
+.form input {
+    padding: 5px;
+    border: 1px solid #999;
+}
+
+.form .submit {
+    padding: 5px;
+    border: 1px solid #999;
+    background: #332299;
+    color: #FFF;
+    border-radius: none;
+}
+
+.form .error {
+    display: none;   
+}
+
+.nav {
+    z-index: 999;
+    position: absolute;
+    width: 120px;
+    right: 120px;
+    top: 0;
+}
+.nav .content-wrapper {
+    position: relative;
+    width: 100px;
+    right: -120px;
+    opacity: 0;
+}
+.nav ul {
+    width: 50px;
+}
+
+.nav ul,
+.nav li {
+    list-style: none;
+    margin: 0;
+}
+
+.nav .active {
+    background-color: blue;
+    -webkit-transition: all 1s ease;
+       -moz-transition: all 1s ease;
+         -o-transition: all 1s ease;
+            transition: all 1s ease;
+}
+.content-wrapper {
+    line-height: 1.5;
+    display: inline-block;
+    vertical-align: middle;
+    width: 100%;
+    padding-bottom: 40px;
+}
+.scene {
+    overflow: hidden;
+    position: relative;
+    padding: 20px 200px;
+}
+
+.scene ul, .scene p {
+    text-align: left;
+}
+
+.background > div {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    -webkit-transition: all 1s ease;
+       -moz-transition: all 1s ease;
+         -o-transition: all 1s ease;
+            transition: all 1s ease;
+}
+
+.background .active {
+    opacity: 1;
+}
+
+.scroll-content {
+    position: relative;
+}
+
+#background-scene-1 {
+    background-color: rgba(207, 236, 247, 0.5);
+}
+
+#background-scene-2 {
+    background-color: rgba(85, 239, 38, 0.5);
+}
+
+#background-scene-3 {
+    background-color: rgba(247, 233, 39, 0.5);
+}
+
+#background-scene-4 {
+    background-color: rgba(173, 30, 27, 0.5);
+}
+
+#background-scene-5 {
+    background-color: rgba(121, 24, 130, 0.5);
+}
+
+#background-scene-6 {
+    background-color: rgba(53, 23, 117, 0.5);
+    color: #FFF;
+}
+
+.scene > * {
+    opacity: 1;
+}
+
+.scene .text {
+    padding: 20px;
+}
+
+.scene .next,
+.header-scene .next {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    margin-left: -15px;
+}
+
+.scene .next a,
+.header-scene .next a {
+    position: relative;
+    color: #000;
+    border: 1px solid #000;
+    display: block;
+    border-radius: 10px;
+    height: 40px;
+    width: 40px;
+    border-radius: 40px;
+    font-size: 1.5em;
+    overflow: hidden;
+    background-color: transparent;
+    -webkit-transition: background 0.5s ease, color 0.5s ease ;
+    transition: background 0.3s ease, color 0.5s ease;
+}
+
+.scene .next a i,
+.header-scene .next a i {
+    position: absolute;
+    top: 9px;
+    left: 12px;
+}
+
+.scene .next a:hover,
+.scene .next a:focus,
+.header-scene .next a:hover,
+.header-scene .next a:focus {
+    background-color: rgba(0, 0, 0, 0.9);
+    color: #fff;
+}
+
+
+@media(max-width: 767px) {
+    
+}
