@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <guests>
     <guest code="PP34">
-        <name>Pauline et Pascal Ruiz</name>
-        <mail>machin@truc.fr</mail>
+        <name>Pascal et Pauline</name>
+        <mail>test@test.fr</mail>
         <confirm>0</confirm>
-        <invited>7</invited>
-        <presence/>
+        <invited>4</invited>
+        <presence>4</presence>
         <nbAdult>2</nbAdult>
         <nbChildren>0</nbChildren>
-        <note></note>
-        <dateConf/>
+        <stayOverNight></stayOverNight>
+        <note>Une remarque pour voir si cela fonctionne correctement test</note>
+        <dateConf></dateConf>
     </guest>
     <guest code="FLO07">
         <name>Aurélie et Florian Chanut</name>
@@ -19,7 +20,8 @@
         <presence/>
         <nbAdult>2</nbAdult>
         <nbChildren>0</nbChildren>
-        <note></note>
+        <stayOverNight/>
+        <note/>
         <dateConf/>
     </guest>
 </guests>

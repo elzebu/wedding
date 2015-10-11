@@ -2,6 +2,7 @@
 <?php 
 $root = simplexml_load_file('guest.xml');
 $guest = $root->xpath('//guest[@code="'.$_POST['code'].'"]');
+$code = $_POST['code'];
 
 if($guest) { ?>
 <?php $guest=$guest[0]; ?>
@@ -39,9 +40,6 @@ if($guest) { ?>
                     Le mariage à la mairie se déroulera le vendredi avec les témoins et les proches uniquement (La mairie du 3ième n'est pas adaptée pour accueillir beaucoup de personnes)
                 </div>
             </div>
-            <div class="next">
-                <a href="#scene-2"><i class="fa fa-angle-double-down"></i><span class="visually-hidden">suite</span></a>
-            </div>
         </div>
     </section>
     <section class="scene windows-height" id="scene-2">
@@ -62,12 +60,6 @@ if($guest) { ?>
                     23h : début de la soirée dansante !
                     </p>
                 </div>
-            </div>
-            <div class="next">
-                <a href="#scene-3">
-                    <i class="fa fa-angle-double-down"></i>
-                    <span class="visually-hidden">suite</span>
-                </a>
             </div>
         </div>
     </section>
@@ -90,12 +82,6 @@ if($guest) { ?>
                     </p>
                 </div>
             </div>
-            <div class="next">
-                <a href="#scene-4">
-                    <i class="fa fa-angle-double-down"></i>
-                    <span class="visually-hidden">suite</span>
-                </a>
-            </div>
         </div>
     </section>
     <section class="scene windows-height" id="scene-4">
@@ -108,9 +94,6 @@ if($guest) { ?>
                     La gare Valence TGV / Alexian est à a peine 20min en voiture du Domaine. Nous pourrons donc organiser des navettes pour venir vous récupérer si vous nous communiquer <strong>assez tôt</strong> l'heure de votre arrivée en gare
                     </p>
                 </div>
-            </div>
-            <div class="next">
-                <a href="#scene-5"><i class="fa fa-angle-double-down"></i><span class="visually-hidden">suite</span></a>
             </div>
         </div>
     </section>
@@ -137,12 +120,6 @@ if($guest) { ?>
                     </p>
                 </div>
             </div>
-            <div class="next">
-                <a href="#scene-6">
-                    <i class="fa fa-angle-double-down"></i>
-                    <span class="visually-hidden">suite</span>
-                </a>
-            </div>
         </div>
     </section>
     <section class="scene windows-height" id="scene-6">
@@ -166,15 +143,8 @@ if($guest) { ?>
                     <ul>
                         <li>Portez un noeud papillon si vous en avez un</li>
                         <li>Portez des bretelles, si vous le souhaitez</li>
-                        <li>Pas de jogging, pas de short (si vous avez trop chaud, une piscine est disponible sur le domaine pour vous rafraichir)</li>
                     </ul>
                 </div>
-            </div>
-            <div class="next">
-                <a href="#scene-7">
-                    <i class="fa fa-angle-double-down"></i>
-                    <span class="visually-hidden">suite</span>
-                </a>
             </div>
         </div>
     </section>
@@ -187,12 +157,6 @@ if($guest) { ?>
                     <?php include('quiz.php') ?>
                 </div>
             </div>
-            <div class="next">
-                <a href="#footer">
-                    <i class="fa fa-angle-double-down"></i>
-                    <span class="visually-hidden">suite</span>
-                </a>
-            </div>
         </div>
     </section>
     <section class="scene windows-height confirm" id="scene-8">
@@ -200,19 +164,20 @@ if($guest) { ?>
         <div class="content-wrapper">
             <div class="text fl w100 relative" data-animate-property="left">
                 <h2>Confirmer votre présence</h2>
-                <form method="post" action="index.php" class="form">
+                <form id="rsvp" method="post" action="index.php" class="form">
                     <p class="name"><?php echo $guest->name?></p>
+                    <input type="hidden" name="code" value="<?php echo $code?>">
                     <div class="w50 fl prs">
                     <h3>Nous serons là pour :</h3>
                     <ul>
                         <?php if($guest->invited & wedding::CEREMONY) { ?>
-                            <li><input type="checkbox" id="form-ceremony" name="presence" value="<?php echo wedding::CEREMONY?>"><label for="form-ceremony">Cerémonie / apéritif</label></li>
+                            <li><input type="checkbox" id="form-ceremony" name="presence[]" <?php if($guest->presence & wedding::CEREMONY) { echo 'checked'; }?> value="<?php echo wedding::CEREMONY?>"><label for="form-ceremony">Cerémonie / apéritif</label></li>
                         <?php } ?>
                         <?php if($guest->invited & wedding::LUNCH) { ?>
-                            <li><input type="checkbox" id="form-lunch" name="presence" value="<?php echo wedding::LUNCH?>"><label for="form-lunch">Repas</label></li>
+                            <li><input type="checkbox" id="form-lunch" name="presence[]" <?php if($guest->presence & wedding::LUNCH) { echo 'checked'; }?> value="<?php echo wedding::LUNCH?>"><label for="form-lunch">Repas</label></li>
                         <?php } ?>
                         <?php if($guest->invited & wedding::SUNDAY) { ?>
-                            <li><input type="checkbox" id="form-sunday" name="presence" value="<?php echo wedding::SUNDAY?>"><label for="form-sunday">Dimanche</label></li>
+                            <li><input type="checkbox" id="form-sunday" name="presence[]" <?php if($guest->presence & wedding::SUNDAY) { echo 'checked'; }?> value="<?php echo wedding::SUNDAY?>"><label for="form-sunday">Dimanche</label></li>
                         <?php } ?>
                     </ul>
                     </div>
@@ -228,7 +193,7 @@ if($guest) { ?>
                     </p>
                     <p>
                         <label for="confirm-nbChildren">Nombre d'enfants</label>
-                        <select name="nbAdult" id="confirm-nbChildren">
+                        <select name="nbChildren" id="confirm-nbChildren">
                             <option value="0">0</option>
                             <option value="1" <?php if($guest->nbChildren == 1) {?>selected<?php } ?>>1</option>
                             <option value="2" <?php if($guest->nbChildren == 2) {?>selected<?php } ?>>2</option>
@@ -238,23 +203,17 @@ if($guest) { ?>
                     </div>
                     <?php if($guest->invited & wedding::SUNDAY) { ?>
                     <div>
-                    <p><input type="checkbox" value="1" name="night" id="confirm-night"><label for="confirm-night">Nous souhaitons dormir sur place</label></p>
+                    <p><input type="checkbox" value="1" name="stayOverNight" id="confirm-night"><label for="confirm-night">Nous souhaitons dormir sur place</label></p>
                     </div>
                     <?php } ?>
                     <div>
                         <h3>Remarques diverses (végétarien, alérgies particulières, etc...)</h3>
-                        <textarea name="note" rows="6" cols="30"></textarea> 
+                        <textarea name="note" rows="6" cols="30"><?php echo $guest->note ?></textarea> 
                     </div>
                     <p>
                     <input type="submit" name="submit" value="confirmer">
                     </p>
                 </form>
-            </div>
-            <div class="next">
-                <a href="#footer">
-                    <i class="fa fa-angle-double-down"></i>
-                    <span class="visually-hidden">suite</span>
-                </a>
             </div>
         </div>
     </section>

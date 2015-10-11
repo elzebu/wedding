@@ -14,15 +14,17 @@
     "scrollmagic": "~2.0.5",
     "fontawesome": "~4.4.0",
     "knacss": "~4.3.2",
-    "konami-code": "latest"
+    "konami-code": "latest",
+    "swiper": "latest",
+    "imagesloaded": "~3.1.8",
+    "greensock": "~1.17.0"
   },
   "overrides": {
     "fontawesome": {
-      "main": 
-         [
-           "css/font-awesome.min.css",
-           "fonts/*"
-         ]
+      "main": [
+        "css/font-awesome.min.css",
+        "fonts/*"
+      ]
     },
     "konami-code": {
       "main": "src/jquery.konami.js"

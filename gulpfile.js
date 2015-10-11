@@ -24,24 +24,31 @@ var prod = './web';
 var bowerDir = './_inc';
 
 
-gulp.task('copy', function() {
+gulp.task('copy', function () {
     var css  = gulp.src([
                 bowerDir + '/fontawesome/css/font-awesome.css',
-                bowerDir + '/knacss/css/knacss-unminified.css'
+                bowerDir + '/knacss/css/knacss-unminified.css',
+                bowerDir + '/swiper/dist/css/swiper.css'
               ])
-        .pipe(gulp.dest(source + '/css/'));
+        .pipe(gulp.dest(source + '/css/dependents/'));
 
-    var fonts = gulp.src([ 
+    var fonts = gulp.src([
                 bowerDir + '/fontawesome/fonts/*'
               ])
-        .pipe(gulp.dest(source + '/css/fonts/'));
+        .pipe(gulp.dest(source + '/css/dependents/fonts/'));
 
     var js    = gulp.src([
                 bowerDir + '/jquery/dist/jquery.min*',
                 bowerDir + '/konami-code/src/jquery.konami.js',
-                bowerDir + '/scrollmagic/scrollmagic/uncompressed/ScrollMagic.js'
+                bowerDir + '/scrollmagic/scrollmagic/uncompressed/plugins/animation.gsap.js',
+                bowerDir + '/scrollmagic/scrollmagic/uncompressed/plugins/debug.addIndicators.js',
+                bowerDir + '/scrollmagic/scrollmagic/uncompressed/ScrollMagic.js',
+                bowerDir + '/swiper/dist/js/swiper.jquery.js',
+                bowerDir + '/imagesloaded/imagesloaded.pkgd.js',
+                bowerDir + '/greensock/src/uncompressed/TweenMax.js',
+                bowerDir + '/greensock/src/uncompressed/plugins/scrollToPlugin.js'
               ])
-        .pipe(gulp.dest(source + '/js/'));
+        .pipe(gulp.dest(source + '/js/dependents/'));
 
     return merge(css, fonts, js); 
 });
@@ -55,16 +62,19 @@ gulp.task('less', function() {
 
 gulp.task('css-prod', function() {
 
-  var css = gulp.src(source + '/css/**/*.css')
+  var css = gulp.src([
+                        source + '/css/dependents/*.css',
+                        source + '/css/**/*.css'
+                    ])
     .pipe(autoprefixer())
     .pipe(concatCss('style.min.css'))
     .pipe(minify())
     .pipe(gulp.dest(prod + '/css/'));
 
   var fonts = gulp.src([ 
-                source + '/css/fonts/*'
+                source + '/css/dependents/fonts/*'
               ])
-        .pipe(gulp.dest(prod + '/css/fonts/'));
+        .pipe(gulp.dest(prod + '/fonts/'));
 
   return merge (css, fonts);
 });
@@ -83,8 +93,18 @@ gulp.task('lint', function() {
 
 // Tâche "js" = uglify + concat
 gulp.task('js', function() {
-  return gulp.src(source + '/js/**/*.js')
-    .pipe(uglify())
+  return gulp.src([
+                    source + '/js/dependents/jquery.min.js',
+                    source + '/js/dependents/TweenMax.js',
+                    source + '/js/dependents/ScrollMagic.js',                    
+                    source + '/js/dependents/animation.gsap.js',
+                    source + '/js/dependents/scrollToPlugin.js',
+                    source + '/js/dependents/debug.addIndicators.js',
+                    source + '/js/dependents/*.js',
+                    source + '/js/**/*.js',
+                  
+                  ])
+    //.pipe(uglify())
     .pipe(concat('global.min.js'))
     .pipe(gulp.dest(prod + '/js/'));
 });

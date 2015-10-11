@@ -19,10 +19,11 @@
 
     $(document).ready(function($) {
 
-        // TODO : faire un konami code qui claque ;)
-        /*var easter_egg = new Konami(function() { 
-            alert('Konami code!')}
-        );*/
+       $( window ).konami({
+            cheat: function() {
+                $('body').append('<div class="konami"><iframe width="420" height="315" src="https://www.youtube.com/embed/PJQVlVHsFF8" frameborder="0" allowfullscreen></iframe></div>');
+            }
+        });
 
         var imgLoad = imagesLoaded( 'body' );
 
@@ -59,10 +60,8 @@
 
             // HEADER
             var timeline = new TimelineMax()
-            .add(TweenMax.fromTo($('#header-scene-1').find('.left'), 1, { css : { left : -$(window).width() / 2}}, { css : { left : 0}}))
-            .add(TweenMax.fromTo( $('#header-scene-1').find('.right'), 1, { css : { right : -$(window).width() / 2}}, { css : { right : 0}}))
-            .add(TweenMax.from( $('#header-scene-1').find('.next'), 0.5, { css : { bottom : -100}} ))
-            .add(TweenMax.to( $('#header-scene-1').find('.next'), 1, { css : { bottom : 10} , repeat: -1, yoyo:true} ));
+            .add(TweenMax.fromTo($('#header-scene-1').find('.fl'), 1, { css : { left : -$(window).width() / 2}}, { css : { left : 0}}))
+            .add(TweenMax.fromTo( $('#header-scene-1').find('.fr'), 1, { css : { right : -$(window).width() / 2}}, { css : { right : 0}}));
 
             var scene = new ScrollMagic.Scene({ triggerElement: '#header-scene-1'})
                             .setTween(timeline)
@@ -84,6 +83,7 @@
                 if(data !== '') {
                     $('#main').html(data);
                     ajaxLoad();
+                    $(document).trigger('ajaxLoad');
                     controller.scrollTo('main');
                 } else {
                   $('#main').html('');
@@ -97,7 +97,6 @@
         //set height to nav element
         setSceneHeight();
         // initQuiz Slider
-        $(document).trigger('ajaxLoad');
         //  Bind scroll to anchor links
         $('#main').on("click", "a[href^=#]", function(e) {
             if($(this).parents('.quiz').length > 0) {
@@ -132,7 +131,7 @@
 
         $('.scene').each(function() {
             var trigger = $(this).find('.trigger');
-            var next = $(this).find('.next');
+            
 
             // try to find a linked link
 
@@ -163,10 +162,6 @@
 
             var timeline = new TimelineMax()
                 .add(TweenMax.fromTo( text, 1, animateFrom, animateTo ));
-            if(next.length > 0) {
-                timeline.add(TweenMax.from( next, 1, {css: {bottom: -100, opacity: 0}, ease: Back.easeOut, delay: 0.5} ))
-                        .add(TweenMax.to( next, 1, {css: {bottom: 10}, repeat: -1, yoyo:true} ));
-            }
 
             var scene_text = new ScrollMagic.Scene({ triggerElement: trigger.get(), offset: 100 })
                         .setTween(timeline)

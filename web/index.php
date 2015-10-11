@@ -48,9 +48,6 @@
                     <div class="clear pam">
                         <h2 class="txtcenter">Se Marient le 04 juin 2016 !</h2>
                     </div>
-                    <div class="next">
-                        <a href="#header-scene-2"><i class="fa fa-angle-double-down"></i><span class="visually-hidden">Suite</span></a>
-                    </div>
                 </div>
             </div>
             <div class="header-scene windows-height relative" id="header-scene-2">
@@ -96,12 +93,6 @@
                                 <span class="result"><?php echo $wedding->getIntervalWedding('%h')?></span>
                             </div>
                         </div>
-                    </div>
-                    <div class="next">
-                        <a href="#header-scene-3">
-                            <i class="fa fa-angle-double-down"></i>
-                            <span class="visually-hidden">Suite</span>
-                        </a>
                     </div>
                 </div>
             </div>
